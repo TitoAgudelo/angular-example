@@ -8,13 +8,16 @@ var app = angular.module('vacation', [
 
 app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
 	$routeProvider
+		.when("/", {
+    		templateUrl: "/partials/home.html"
+		})
 		.when("/list", {
 			controller: "ActivityListCtrl",
-			templateUrl: "partials/activity_list.html"
+			templateUrl: "/partials/activity_list.html"
 		})
 		.when("/activity/:id", {
 			controller: "ActivityCtrl",
-			templateUrl: "partials/activity_detail.html"
+			templateUrl: "/partials/activity_detail.html"
 		})
     	.otherwise({
     		redirectTo: "/"

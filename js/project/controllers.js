@@ -11,3 +11,14 @@ ctrls.controller('ActivityListCtrl', ['$scope', 'dataFactory',
     	
     }
 ]);
+
+
+ctrls.controller('ActivityCtrl', ['$scope', '$routeParams',
+	function($scope, $routeParams) {
+		var id = $routeParams.id;
+		angular.forEach($scope.activities, function(activity, index){
+            if (activity.activityId == id) {
+                $scope.activity = activity;
+            }
+        });
+	}]);
