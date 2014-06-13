@@ -2,24 +2,20 @@
 
 /* Services */
 
-var services = angular.module('glm.services', []);
+var services = angular.module('vacation.services', []);
 
 services.factory('dataFactory', ['$http', function ($http) {
-    var urlBase = '../api/person';
+    var JsonList = '../../inbox.json';
     var dataFactory = {};
 
     //get person by method get at the service in personController
-    dataFactory.getPersons = function (email) {
-        return $http.get(urlBase + '?email=' + email);
+    dataFactory.getActivities = function () {
+        return $http.get(JsonList);
     };
 
-    dataFactory.getPerson = function (id) {
-        return $http.get(urlBase + '/' + id);
-    };
-
-    dataFactory.getItems = function (category) {
-        var urlItems = '../api/menuapi';
-        return $http.get(urlItems);
+    dataFactory.getActivityById = function (id) {
+        var urlActivity = '../../activity';
+        return $http.get(urlActivity+id+'.json');
     };
 
     return dataFactory;
