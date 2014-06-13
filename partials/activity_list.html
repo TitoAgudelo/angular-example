@@ -1,7 +1,20 @@
-<div class="container-fluid">
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>Soli</h2>
+		</div>
+	</div>
   	<div class="row">
 		<div class="col-md-12">
-			
+			<ul ng-repeat="activity in activities">
+				<li>
+					<a href="/activity/{{activity.actividy}}">{{ activity.process }}</a>
+					<button ng-click="activity.approve = true">approve</button>
+					<button ng-click="activity.approve = false">reject</button>
+					<span ng-show="activity.approve" class="glyphicon glyphicon-ok"></span>
+					<span ng-hide="activity.approve" class="glyphicon glyphicon-remove"></span>
+				</li>
+			</ul>	
 		</div>
   	</div>
 </div>

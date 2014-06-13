@@ -6,7 +6,7 @@ var app = angular.module('vacation', [
 		'vacation.services'
 	]);
 
-app.config(["$routeProvider", function ($routeProvider) {
+app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
 	$routeProvider
 		.when("/list", {
 			controller: "ActivityListCtrl",
@@ -19,4 +19,15 @@ app.config(["$routeProvider", function ($routeProvider) {
     	.otherwise({
     		redirectTo: "/"
     	});
+
+    $locationProvider.html5Mode(true);
 }]);
+
+app.run(['$rootScope', '$http',
+	function($rootScope, $http) {
+			var jsonList = '/stubs/inbox.json';
+         	$http.get(jsonList).success(function(data){
+     			$rootScope.activities = data;
+         	});
+		}
+	]);
