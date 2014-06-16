@@ -9,4 +9,4 @@ Instalación
 - Index.html corriendo con el server
 
 
-el repositorio en github lo pueden encontrar 
+el repositorio en github lo pueden encontrar https://github.com/TitoAgudelo/angular-example
