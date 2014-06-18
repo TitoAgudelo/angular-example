@@ -9,15 +9,15 @@ var app = angular.module('vacation', [
 app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
 	$routeProvider
 		.when("/", {
-    		templateUrl: "/partials/home.html"
+    		templateUrl: "/angular-example/partials/home.html"
 		})
 		.when("/list", {
 			controller: "ActivityListCtrl",
-			templateUrl: "/partials/activity_list.html"
+			templateUrl: "/angular-example/partials/activity_list.html"
 		})
 		.when("/activity/:id", {
 			controller: "ActivityCtrl",
-			templateUrl: "/partials/activity_detail.html"
+			templateUrl: "/angular-example/partials/activity_detail.html"
 		})
     	.otherwise({
     		redirectTo: "/"
@@ -28,7 +28,7 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
 
 app.run(['$rootScope', '$http',
 	function($rootScope, $http) {
-			var jsonList = '/stubs/inbox.json';
+			var jsonList = '/angular-example/stubs/inbox.json';
          	$http.get(jsonList).success(function(data){
      			$rootScope.activities = data;
          	});
