@@ -29,7 +29,7 @@
 					<span class="col-md-2 col-lg-2">{{ activity.endDate }}</span>
 					<button ng-hide="activity.approve" class="btn btn-success col-md-2 col-lg-2" ng-click="activity.approve = true">Approve</button>
 					<button ng-show="activity.approve" class="btn btn-danger col-md-2 col-lg-2" ng-click="activity.approve = false">Reject</button>
-					<a class=" col-md-1 col-lg-1" ng-href="/angular-example/activity/{{activity.activityId}}"><span class="glyphicon glyphicon-pencil"></span></a>
+					<a class=" col-md-1 col-lg-1" ng-href="/activity/{{activity.activityId}}"><span class="glyphicon glyphicon-pencil"></span></a>
 				</li>
 			</ul>	
 		</div>
