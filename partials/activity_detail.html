@@ -1,0 +1,49 @@
+<div class="container" ng-controller="ActivityCtrl">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>Detail requests</h2>
+		</div>
+	</div>
+  	<div class="row">
+		<div class="col-md-2">
+			<h3><small>Employee</small></h3>
+			<span>{{ activity.employee }}</span>
+		</div>
+		<div class="col-md-2">
+			<h3><small>Activity</small></h3>
+			<span>{{ activity.activity }}</span>
+		</div>
+  	</div>
+  	<div class="row">
+		<div class="col-md-2">
+			<h3><small>Begin date</small></h3>
+			<span>{{ activity.beginDate }}</span>
+		</div>
+		<div class="col-md-2">
+			<h3><small>End date</small></h3>
+			<span>{{ activity.endDate }}</span>
+		</div>
+  	</div>
+  	<div class="row">
+		<div class="col-md-2">
+			<h3><small>Approve</small></h3>
+			<div>
+				<span ng-show="activity.approve">Approve</span>
+				<span ng-hide="activity.approve">Reject</span>
+			</div>
+			<button ng-hide="activity.approve" class="btn btn-info" ng-click="activity.approve = true">Change</button>
+			<button ng-show="activity.approve" class="btn btn-danger" ng-click="activity.approve = false">Change</button>
+		</div>
+		<div class="col-md-2">
+			<h3><small>Request Date</small></h3>
+			<span>{{ activity.requestDate }}</span>
+		</div>
+  	</div>
+  	<br>
+  	<br>
+  	<div class="row">
+  		<div class="col-md-2 col-md-offset-1 col-lg-2 col-lg-offset-1">
+  			<a href="/list" class="btn btn-success">Continue</a>
+  		</div>
+  	</div>
+</div>

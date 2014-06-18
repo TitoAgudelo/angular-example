@@ -1,0 +1,37 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>Vacation requests</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<ul>
+				<li class="row">
+					<h4 class="col-sm-1 col-md-1"><small>Approve</small></h4>
+					<h4 class="col-sm-4 col-md-4"><small>Employee</small></h4>
+					<h4 class="col-sm-2 col-md-2"><small>Begin request date</small></h4>
+					<h4 class="col-sm-2 col-md-2"><small>End request date</small></h4>
+					<h4 class="col-sm-2 col-md-2"><small>Action</small></h4>
+					<h4 class="col-sm-1 col-md-1"><small>Edit</small></h4>
+				</li>
+			</ul>
+		</div>
+	</div>
+  	<div class="row">
+		<div class="col-md-12">
+			<ul ng-repeat="activity in activities">
+				<li class="row">
+					<span ng-show="activity.approve" class="glyphicon glyphicon-ok col-md-1 col-lg-1"></span>
+					<span ng-hide="activity.approve" class="glyphicon glyphicon-remove col-md-1 col-lg-1"></span>
+					<span class="col-md-4 col-lg-4">{{ activity.employee }}</span>
+					<span class="col-md-2 col-lg-2">{{ activity.beginDate }}</span>
+					<span class="col-md-2 col-lg-2">{{ activity.endDate }}</span>
+					<button ng-hide="activity.approve" class="btn btn-success col-md-2 col-lg-2" ng-click="activity.approve = true">Approve</button>
+					<button ng-show="activity.approve" class="btn btn-danger col-md-2 col-lg-2" ng-click="activity.approve = false">Reject</button>
+					<a class=" col-md-1 col-lg-1" ng-href="/activity/{{activity.activityId}}"><span class="glyphicon glyphicon-pencil"></span></a>
+				</li>
+			</ul>	
+		</div>
+  	</div>
+</div>

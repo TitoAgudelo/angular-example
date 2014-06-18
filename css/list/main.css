@@ -1,0 +1,8 @@
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+
+.container ul li {
+	list-style: none;
+	padding: 1rem;
+}

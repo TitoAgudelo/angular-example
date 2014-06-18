@@ -1,0 +1,18 @@
+Angular route and data memory
+==============
+
+Intalation
+--------------
+
+- Download
+- Open a console in linux or mac
+- cd directory of project
+- python -m SimpleHTTPServer
+- open in a browser http://127.0.0.1:8000 
+
+Requirements
+--------------
+
+**AngularJS**
+**Boostrap Twitter**
+**python -m SimpleHTTPServer**
